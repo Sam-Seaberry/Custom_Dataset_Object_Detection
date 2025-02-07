@@ -11,8 +11,50 @@ Custom training of object detection models using TensorFlow.
 ## Training Instructions
 1. Gather all images to be used for training.
  1.1 Make sure all images are the same size (width and height in pix)
-2. Go to [VGG Annotation Tool](https://annotate.oƯicialstatistics.org/)
-3. Add your images 
+2. Go to [VGG Annotation Tool](https://annotate.officialstatistics.org/) ![alt text](https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/1.png)
+3. Add your images
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/3.png" alt="placeholder" width="150" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/2.png" alt="placeholder" width="150" height="300">
+
+4. Add your first attribute (name of the thing you want to detect). Here we are detecting red and black pens so the first attribute will be "Red Pen"
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/4.png" alt="placeholder" width="150" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/5.png" alt="placeholder" width="200" height="200">
+
+5. Draw boxes around each instance of the object.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/6.png" alt="placeholder" width="400" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/7.png" alt="placeholder" width="400" height="300">
+
+6.Once all objects of this type have been labeled across all images delete the attirbute.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/8.png" alt="placeholder" width="300" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/9.png" alt="placeholder" width="300" height="200">
+
+7.If there are other object types, repeat from step 4.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/10.png" alt="placeholder" width="300" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/11.png" alt="placeholder" width="250" height="200"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/12.png" alt="placeholder" width="250" height="200">
+
+8.Once all object have been labeled, export the annotations as a .csv file.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/13.png" alt="placeholder" width="400" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/14.png" alt="placeholder" width="400" height="300">
+
+9. Run MainGUI.exe and select "Create New Project" from the top toolbar.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/15.png" alt="placeholder" width="400" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/16.png" alt="placeholder" width="400" height="300">
+
+10.Chose a project name and location. If you are training from scratch check the "Download" checkbox and select a model type. Descriptions of model types can be found online. Generally, FRCNN is the most accurate but largest and slowest wheras SSD is less accurate but fast and small. Select an image size to train the model with. Keeping all images the same dimensions aid the models accuracy. It is suggested to select an image size of 640 unless using a desktop computer with and appropriate GPU and Cuda/CuDNN installed.  
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/17.png" alt="placeholder" width="400" height="300">
+
+11. Add all the images used in step 3 by clicking on the "Add" button. Once all images are added type the image size selected in the last step into the box below the image list and click "Resize" (If your images have already been resized this part may be skipped). Add the annotations file downloaded in step 8. If training and testing datasets are to be kept static and separate add them to their respective boxes. Otherwise, a random split will occur.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/18.png" alt="placeholder" width="400" height="300"> 
+
+12.Write the names of all annotations used from step 4, seperated by a comma. NOTE: These names must match exactly to the names used using step 4 if they do not unexpected results will occur. 
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/19.png" alt="placeholder" width="400" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/20.png" alt="placeholder" width="400" height="300">
+
+13.Wait for the model to finish downloading. The downloading screen will automatically disappear once the download is completed.
+
+
 ## Source Code Install Instructions
 
 1. **Create a Python virtual environment**:
