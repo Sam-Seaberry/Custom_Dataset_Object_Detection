@@ -47,6 +47,8 @@ class pipeline_editor():
         pipeline_config.train_config.batch_size = self.batch_size
     
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.learning_rate_base = self.learning_rate
+        pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.warmup_learning_rate = self.learning_rate*0.9
+
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.total_steps = self.num_steps
         pipeline_config.train_config.num_steps = self.num_steps
     
@@ -134,6 +136,8 @@ class pipeline_editor():
         pipeline_config.train_config.batch_size = self.batch_size
     
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.learning_rate_base = self.learning_rate
+        pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.warmup_learning_rate = self.learning_rate*0.9
+
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.total_steps = self.num_steps
         pipeline_config.train_config.num_steps = self.num_steps
     
@@ -195,6 +199,8 @@ class pipeline_editor():
         pipeline_config.train_config.batch_size = self.batch_size
 
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.learning_rate_base = self.learning_rate
+        pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.warmup_learning_rate = self.learning_rate*0.9
+        
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.total_steps = self.num_steps
         pipeline_config.train_config.num_steps = self.num_steps
     
@@ -250,6 +256,8 @@ class pipeline_editor():
         pipeline_config.train_config.batch_size = self.batch_size
     
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.learning_rate_base = self.learning_rate
+        pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.warmup_learning_rate = self.learning_rate*0.9
+
         pipeline_config.train_config.optimizer.momentum_optimizer.learning_rate.cosine_decay_learning_rate.total_steps = self.num_steps
         pipeline_config.train_config.num_steps = self.num_steps
     
