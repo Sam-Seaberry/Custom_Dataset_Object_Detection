@@ -10,9 +10,11 @@ Custom training of object detection models using TensorFlow.
 
 ## Training Instructions
 1. Gather all images to be used for training.
- 1.1 Make sure all images are the same size (width and height in pix)
-2. Go to [VGG Annotation Tool](https://annotate.officialstatistics.org/) ![alt text](https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/1.png)
-3. Add your images
+
+   1.1 Make sure all images are the same size (width and height in pix)
+ 
+3. Go to [VGG Annotation Tool](https://annotate.officialstatistics.org/) ![alt text](https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/1.png)
+4. Add your images
 
 <img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/3.png" alt="placeholder" width="150" height="300"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/2.png" alt="placeholder" width="150" height="300">
 
@@ -42,11 +44,11 @@ Custom training of object detection models using TensorFlow.
 
 10.Chose a project name and location. If you are training from scratch check the "Download" checkbox and select a model type. Descriptions of model types can be found online. Generally, FRCNN is the most accurate but largest and slowest wheras SSD is less accurate but fast and small. Select an image size to train the model with. Keeping all images the same dimensions aid the models accuracy. It is suggested to select an image size of 640 unless using a desktop computer with and appropriate GPU and Cuda/CuDNN installed.  
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/17.png" alt="placeholder" width="400" height="300">
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/17.png" alt="placeholder" width="400" height="300"></p>
 
 11. Add all the images used in step 3 by clicking on the "Add" button. Once all images are added type the image size selected in the last step into the box below the image list and click "Resize" (If your images have already been resized this part may be skipped). Add the annotations file downloaded in step 8. If training and testing datasets are to be kept static and separate add them to their respective boxes. Otherwise, a random split will occur.
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/18.png" alt="placeholder" width="400" height="300"> 
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/18.png" alt="placeholder" width="400" height="300"></p> 
 
 12.Write the names of all annotations used from step 4, seperated by a comma. NOTE: These names must match exactly to the names used using step 4 if they do not unexpected results will occur. 
 
@@ -56,7 +58,7 @@ Custom training of object detection models using TensorFlow.
 
 14.Once the model has finished downloading, click on the button with your project name. If the project button does not appear select "Set New Project Directory" by going to Properties->Set New Project Directory and select the folder that contains your project. The screen will auto-update and find all projects in the specified folder. Once clicked the project folder structure will be displayed on the left side of the window.
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/30.png" alt="placeholder" width="400" height="300"> 
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/30.png" alt="placeholder" width="400" height="300"></p> 
 
 15.Select "Edit Pipeline" from the top navigation bar. Check the box of the model type downloaded in step 10. Fill in the other boxes:
 Number of Classes = Number of objects/independent annotations
@@ -65,7 +67,7 @@ Classification/Localization Weight = set one slightly larger than the other if o
 Max Number of Boxes = Enter the maximum number of objects in a single image. This includes all object types.
 Click "Next once completed
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/27.png" alt="placeholder" width="400" height="300"> 
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/27.png" alt="placeholder" width="400" height="300"></p> 
 
 16. Training Edit Page:
 Learning Rate = Update rate of neurons (recommended to start at 0.01)
@@ -76,17 +78,17 @@ Trained image shape = Shape of images given to the model. This should match the 
 Test/train annotations = as before if the dataset must have a static split between test and training add the datasets to their respective boxes. NOTE: Using the left side file viewer annotations can be dragged and dropped into boxes.
 Click "Load Model"
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/28.png" alt="placeholder" width="400" height="300"> 
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/28.png" alt="placeholder" width="400" height="300"></p> 
 
 17.If errors exist they will be displayed by the error bar located below the page and highlighted in RED text. If errors do exist solve them before moving onto the next step.
 
 18.Select "Run" from the top navigation bar. Click the green "Run" button. The model should begin to run. As before any errors will be displayed in the error bar.
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/29.png" alt="placeholder" width="400" height="300"> 
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/29.png" alt="placeholder" width="400" height="300"></p>
 
 19.Output from Tensorflow can be seen in the logging display under the error bar. Watch this carefully at the beginning of training as errors may occur. 
 
-<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/26.png" alt="placeholder" width="400" height="300"> 
+<p align="center"><img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/26.png" alt="placeholder" width="400" height="300"></p>
 
 ## Source Code Install Instructions
 
