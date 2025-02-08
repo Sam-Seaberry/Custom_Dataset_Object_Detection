@@ -54,6 +54,39 @@ Custom training of object detection models using TensorFlow.
 
 13.Wait for the model to finish downloading. The downloading screen will automatically disappear once the download is completed.
 
+14.Once the model has finished downloading, click on the button with your project name. If the project button does not appear select "Set New Project Directory" by going to Properties->Set New Project Directory and select the folder that contains your project. The screen will auto-update and find all projects in the specified folder. Once clicked the project folder structure will be displayed on the left side of the window.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/30.png" alt="placeholder" width="400" height="300"> 
+
+15.Select "Edit Pipeline" from the top navigation bar. Check the box of the model type downloaded in step 10. Fill in the other boxes:
+Number of Classes = Number of objects/independent annotations
+Batch Size = Number of images to train on before updating 
+Classification/Localization Weight = set one slightly larger than the other if one is more important forthe  use case
+Max Number of Boxes = Enter the maximum number of objects in a single image. This includes all object types.
+Click "Next once completed
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/27.png" alt="placeholder" width="400" height="300"> 
+
+16. Training Edit Page:
+Learning Rate = Update rate of neurons (recommended to start at 0.01)
+Number of Steps = Dependent on the difficulty of the task or desired accuracy above 100,000 suggested
+Source image width and height = width and height of images (pixels) used during step 3. NOTE: If the images used for step 3 have varying dimensions issues will arise. Ensure all images are of the same dimensions before annotating.
+Number of Steps Before Evaluation = Used in conjunction with tensorboard to view models progression.
+Trained image shape = Shape of images given to the model. This should match the value written in step 11 and selected in step 10.
+Test/train annotations = as before if the dataset must have a static split between test and training add the datasets to their respective boxes. NOTE: Using the left side file viewer annotations can be dragged and dropped into boxes.
+Click "Load Model"
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/28.png" alt="placeholder" width="400" height="300"> 
+
+17.If errors exist they will be displayed by the error bar located below the page and highlighted in RED text. If errors do exist solve them before moving onto the next step.
+
+18.Select "Run" from the top navigation bar. Click the green "Run" button. The model should begin to run. As before any errors will be displayed in the error bar.
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/29.png" alt="placeholder" width="400" height="300"> 
+
+19.Output from Tensorflow can be seen in the logging display under the error bar. Watch this carefully at the beginning of training as errors may occur. 
+
+<img src="https://github.com/Sam-Seaberry/Custom_Dataset_Object_Detection/blob/main/res/images/26.png" alt="placeholder" width="400" height="300"> 
 
 ## Source Code Install Instructions
 
