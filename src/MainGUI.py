@@ -153,7 +153,7 @@ class displayimage(QDialog):
         super().__init__(parent)
         self.model = model
     
-        self.dialog = uic.loadUi('res/images/eval_dialog.ui', self)
+        self.dialog = uic.loadUi('res/pages/eval_dialog.ui', self)
         
         self.dialog.close_btn.clicked.connect(self.reject)
         
