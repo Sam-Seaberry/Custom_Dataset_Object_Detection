@@ -336,13 +336,13 @@ class createproject(QDialog):
 
                     #Saving original image
                     origin_path  = os.path.join(self.origin_Image_Path, file)
-                    img.save(origin_path)
+                    img.save(origin_path, exif=img.info.get("exif"))
 
                     img = ImageOps.exif_transpose(img)
                     img = img.resize((int(self.dialog.imageReSize.text()), int(self.dialog.imageReSize.text())))
                     logger.info(f"Image Resizing to {self.dialog.imageReSize.text()}")
     
-                    img.save(fullpath)
+                    img.save(fullpath, exif=img.info.get("exif"))
                     
                 else:
                     continue
