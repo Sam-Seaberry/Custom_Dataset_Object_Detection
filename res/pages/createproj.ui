@@ -468,7 +468,7 @@ border: 2px solid black;</string>
       <rect>
        <x>20</x>
        <y>340</y>
-       <width>161</width>
+       <width>164</width>
        <height>31</height>
       </rect>
      </property>
@@ -541,7 +541,7 @@ border: 2px solid black;</string>
     <widget class="QPushButton" name="completeProjCreate">
      <property name="geometry">
       <rect>
-       <x>200</x>
+       <x>330</x>
        <y>230</y>
        <width>181</width>
        <height>41</height>
@@ -549,6 +549,19 @@ border: 2px solid black;</string>
      </property>
      <property name="text">
       <string>Finish</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="addAnnotations">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>230</y>
+       <width>181</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>ADD Annotations</string>
      </property>
     </widget>
    </widget>
