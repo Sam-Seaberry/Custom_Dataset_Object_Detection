@@ -3,6 +3,7 @@ from create_lable_map import lable_map_creator
 from PyQt5.QtCore import pyqtSignal
 from PyQt5 import uic, QtWidgets
 from detect import downloadmodel
+from Annotations import createannotations
 from PIL import Image, ImageOps
 import threading
 import logging
@@ -353,6 +354,8 @@ class createproject(QDialog):
     # ========================================== #
     def page3(self):
         self.dialog.confirmLablesBtn.clicked.connect(lambda: self.update_lables())
+        
+        self.dialog.addAnnotations.clicked.connect(lambda: self.createannots())
             
         
         self.dialog.completeProjCreate.clicked.connect(lambda: self.create_n_exit())
@@ -378,6 +381,7 @@ class createproject(QDialog):
     # Function add/update/display images on page 2   #
     # ============================================== #
     def image_list(self, images):
+        self.images = images
         row = 0 
         column = 0
         self.dialog.imagesTable.setRowCount(len(images))
@@ -460,3 +464,9 @@ class createproject(QDialog):
         self.dialog.largeimagecheck.setCheckable(True)
         self.dialog.xLarge_image.setCheckable(True)
         return
+    
+    def createannots(self):
+        dialog = createannotations(self, self.images)
+        
+        dialog.show()
+        #dialog.FinishedClicked.connect(self.autoimport)

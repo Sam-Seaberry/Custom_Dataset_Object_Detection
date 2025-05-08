@@ -1229,6 +1229,7 @@ class App(QtWidgets.QMainWindow):
                 
             if "learning_rate" in info:
                 parse1 = info.split(":")
+                print(parse1)
                 self.ui.learning_rate_value.setText(str(parse1[1]))   
                 
             if "INFO:tensorflow:Step" in info:

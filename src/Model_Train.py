@@ -719,11 +719,28 @@ class model_trainer():
         '''
         Runner fuction for tensorboard Eval (use tensorboard --logdir==[model eval directory])
         '''
-        
+        logger.info("Evaluation Started")
         TRAINING_SCRIPT = os.path.join(self.apimodelpth, 'research', 'object_detection', 'model_main_tf2.py')
+        EXE_SCRIPT = self.apimodelpth.replace("tensorflow", "").replace("models-master", "").replace("//","/") + "model_main_tf2.exe"
+        try:
+            self.eval = subprocess.Popen([EXE_SCRIPT.replace("//","/"), 
+                                         f"--model_dir={self.modelpth}",
+                                         f"--pipeline_config_path={self.configpth}",
+                                         f"checkpoint_dir={self.modelpth}",
+                                         "--alsologtostderr"], 
+                                         creationflags=subprocess.CREATE_NO_WINDOW, 
+                                         stdout=subprocess.PIPE, 
+                                         universal_newlines=True,  
+                                         stderr=subprocess.STDOUT)
+            #self.eval = subprocess.Popen(self.exepath, creationflags=subprocess.CREATE_NO_WINDOW)
+            
+        except Exception as e:
+            logger.error(f"Evaluation Running Failed: {e}")
+            logger.info(f"path at failure: {self.exepath} \n Model Path: {self.modelpth}, \n Config Path: {self.configpth}")
+            logger.info(f"Traceback: {traceback.print_exc()}")
+            self.Error_During_Training = True
         
-        commandEval = "python {} --model_dir={} --pipeline_config_path={} --checkpoint_dir={}".format(TRAINING_SCRIPT, self.modelpth, self.configpth, self.modelpth)
-        self.eval = subprocess.Popen(self.exepath, creationflags=subprocess.CREATE_NO_WINDOW)
+        logger.debug(self.eval.stderr)
         #os.system(commandEval)
         
     # Filling model pipeline.config parameters
